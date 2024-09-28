@@ -72,7 +72,7 @@ structure is as follows:
 ## Some miscellaneous notes:
 - Tasks are indexed by ID. The tool tries to use free IDs when they go out of
 use, so indexes should be in a sequential order;
-- Statuses are represented as a numeric ID from 0 to 3 ("todo", "done" and
-"in progress" respectively);
+- Statuses are represented as a numeric ID from 0 to 3 ("todo", "in-progress"
+and "done" respectively);
 - Descriptions *can* be arbitrarily long, but the list command pads them to 48
 characters by default, so they'll look ugly if larger than that.
