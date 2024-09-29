@@ -82,7 +82,7 @@ func getSortedTasksIDs() []uint64 {
 	return ids
 }
 
-func (t *Tasks) addTask(desc string) uint64 {
+func (t *Tasks) addTask(desc string) {
 	ids := getSortedTasksIDs()
 
 	id := uint64(1)
@@ -103,10 +103,7 @@ func (t *Tasks) addTask(desc string) uint64 {
 	}
 
 	tasks.Tasks[id] = createTask(id, desc)
-
 	fmt.Printf("Task added successfully! ID: %v\n", id)
-
-	return id
 }
 
 func (t *Tasks) updateTask(id uint64, newDesc string) error {
@@ -123,18 +120,18 @@ func (t *Tasks) updateTask(id uint64, newDesc string) error {
 }
 
 func (t *Tasks) deleteTasksByID(id uint64) error {
-	if _, ok := tasks.Tasks[id]; !ok {
+	if _, ok := t.Tasks[id]; !ok {
 		return fmt.Errorf("No task with ID %v!\n", id)
 	}
 
-	delete(tasks.Tasks, id)
+	delete(t.Tasks, id)
 	return nil
 }
 
 func (t *Tasks) deleteTasksByStatus(status TaskStatus) {
 	for k, v := range t.Tasks {
 		if v.Status == status {
-			delete(tasks.Tasks, k)
+			delete(t.Tasks, k)
 		}
 	}
 }
