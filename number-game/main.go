@@ -21,7 +21,6 @@ var (
 )
 
 func getCustomScore() int {
-loop:
 	for {
 		fmt.Print("Type your custom number of chances: ")
 		fmt.Scanln(&userInput)
@@ -29,12 +28,12 @@ loop:
 		guess, err := strconv.Atoi(userInput)
 		if err != nil {
 			fmt.Printf("'%s' isn't even a number! Try again:\n\n", userInput)
-			goto loop
+			continue
 		}
 
 		if guess < 1 || guess > 100 {
 			fmt.Print("You can't have less than 1 chance! Try again:\n\n")
-			goto loop
+			continue
 		}
 
 		return guess
@@ -89,7 +88,7 @@ loop:
 			fmt.Printf("\nAlright! You have %d chances then.\n", numberOfChances)
 		default:
 			fmt.Printf("No such option %s. Try again:\n\n", userInput)
-			continue loop
+			continue
 		}
 
 		fmt.Print("Let's start the game!\n\n")
@@ -97,7 +96,7 @@ loop:
 	gameLoop:
 		if chances > numberOfChances {
 			fmt.Printf("Aww... seems like you couldn't guess the number :(\nIt was %d!\n\n", answer)
-			break loop
+			break
 		}
 
 		fmt.Print("Enter your guess: ")
