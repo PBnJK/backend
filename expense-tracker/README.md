@@ -1,19 +1,26 @@
 # Expense Tracker
+
 CLI expenses-tracking tool for the
 [roadmap.sh expense tracker](https://roadmap.sh/projects/expense-tracker)
 project.
 
 ## Running
+
 ### 1. Clone
+
 ```bash
 git clone https://github.com/pbnjk/backend.git
 ```
+
 ### 2. Build
+
 ```bash
 cd backend/expense-tracker
 go build
 ```
+
 ### 3. Run!
+
 ```bash
 # Adds an expense
 ./expense-tracker add --description "Lunch" --amount 20
@@ -39,8 +46,10 @@ go build
 ```
 
 ## DB Format
+
 Expenses are stored in a .json file called "db.json". The format of the JSON
 structure is as follows:
+
 ```json
 {
 	"expenses": {
