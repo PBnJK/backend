@@ -1,0 +1,74 @@
+:root {
+  --c-unfocused: gray;
+  --c-focused: #20202f;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+h1 {
+  text-align: center;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+#tab-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.tablink {
+  flex-grow: 1;
+
+  margin: 0 8px;
+  height: 48px;
+
+  border: 4px dotted var(--c-unfocused);
+  border-radius: 12px;
+
+  background-color: white;
+
+  color: var(--c-unfocused);
+
+  font-size: 18px;
+}
+
+.tablink:hover {
+  cursor: pointer;
+  color: var(--c-focused);
+  border-color: var(--c-focused);
+}
+
+.tab {
+  display: none; /* NOTE: changed to "flex" programatically */
+
+  margin: 16px 8px;
+  padding: 32px;
+
+  border: 4px dotted var(--c-focused);
+  border-radius: 12px;
+
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+.input-container {
+}
+
+.input-container label {
+  display: block;
+}
+
+.input-container .input {
+  width: 320px;
+}
+
+.input-container select {
+  cursor: pointer;
+}

@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Unit Converter</title>
+
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <h1>Unit Converter</h1>
+
+    <div id="tab-container">
+      <button class="tablink" onclick="switchTabs('tab-length');">
+        length
+      </button>
+      <button class="tablink" onclick="switchTabs('tab-temperature');">
+        temperature
+      </button>
+      <button class="tablink" onclick="switchTabs('tab-weight');">
+        weight
+      </button>
+    </div>
+
+    <form class="tab" id="tab-length" action="/length" method="post">
+      <div class="input-container">
+        <label for="l-number">Convert:</label>
+        <input class="input" type="number" name="l-number" value="l-number" />
+      </div>
+      <div class="input-container">
+        <label for="l-from">From:</label>
+        <select class="input" name="l-from">
+          <option value="l-mm">millimeter (mm)</option>
+          <option value="l-cm">centimeter (cm)</option>
+          <option value="l-dm">decimeter (dm)</option>
+          <option value="l-m">meter (m)</option>
+          <option value="l-dam">decameter (dam)</option>
+          <option value="l-hm">hectometer (hm)</option>
+          <option value="l-km">kilometer (km)</option>
+          <option value="l-in">inch (in)</option>
+          <option value="l-ft">foot (ft)</option>
+          <option value="l-yd">yard (yd)</option>
+          <option value="l-mi">mile (mi)</option>
+        </select>
+      </div>
+      <div class="input-container">
+        <label for="l-to">To:</label>
+        <select class="input" name="l-to">
+          <option value="l-mm">millimeter (mm)</option>
+          <option value="l-cm">centimeter (cm)</option>
+          <option value="l-dm">decimeter (dm)</option>
+          <option value="l-m">meter (m)</option>
+          <option value="l-dam">decameter (dam)</option>
+          <option value="l-hm">hectometer (hm)</option>
+          <option value="l-km">kilometer (km)</option>
+          <option value="l-in">inch (in)</option>
+          <option value="l-ft">foot (ft)</option>
+          <option value="l-yd">yard (yd)</option>
+          <option value="l-mi">mile (mi)</option>
+        </select>
+      </div>
+
+      <button type="submit">convert</button>
+
+      {{if .LResult}}
+      <p class="result">{{.LNumber}}{{.LUnit}} = {{.LResult}}{{.LTo}}</p>
+      {{end}}
+    </form>
+
+    <form class="tab" id="tab-temperature" action="/temperature" method="post">
+      <div class="input-container">
+        <label for="t-number">Convert:</label>
+        <input class="input" type="number" name="t-number" value="t-number" />
+      </div>
+      <div class="input-container">
+        <label for="t-from">From:</label>
+        <select class="input" name="t-from">
+          <option value="t-C">celsius (°C)</option>
+          <option value="t-F">fahrenheit (°F)</option>
+          <option value="t-K">kelvin (°K)</option>
+        </select>
+      </div>
+      <div class="input-container">
+        <label for="t-to">To:</label>
+        <select class="input" name="t-to">
+          <option value="t-C">celsius (°C)</option>
+          <option value="t-F">fahrenheit (°F)</option>
+          <option value="t-K">kelvin (°K)</option>
+        </select>
+      </div>
+
+      <button type="submit">convert</button>
+
+      {{if .TResult}}
+      <p class="result">{{.TNumber}}{{.TUnit}} = {{.TResult}}{{.TTo}}</p>
+      {{end}}
+    </form>
+
+    <form class="tab" id="tab-weight" action="/weight" method="post">
+      <div class="input-container">
+        <label for="w-number">Convert:</label>
+        <input class="input" type="number" name="w-number" value="w-number" />
+      </div>
+      <div class="input-container">
+        <label for="w-from">From:</label>
+        <select class="input" name="w-from">
+          <option value="w-g">gram (g)</option>
+          <option value="w-kg">kilogram (kg)</option>
+          <option value="w-lbs">pounds (lbs)</option>
+          <option value="w-oz">ounces (oz)</option>
+        </select>
+      </div>
+      <div class="input-container">
+        <label for="w-to">To:</label>
+        <select class="input" name="w-to">
+          <option value="w-g">gram (g)</option>
+          <option value="w-kg">kilogram (kg)</option>
+          <option value="w-lbs">pounds (lbs)</option>
+          <option value="w-oz">ounces (oz)</option>
+        </select>
+      </div>
+
+      <button type="submit">convert</button>
+
+      {{if .WResult}}
+      <p class="result">{{.WNumber}}{{.WUnit}} = {{.WResult}}{{.WTo}}</p>
+      {{end}}
+    </form>
+  </body>
+
+  <script src="script.js"></script>
+  <script>
+    {{if .Focus}}
+    switchTabs("{{.Focus}}")
+    {{end}}
+  </script>
+</html>

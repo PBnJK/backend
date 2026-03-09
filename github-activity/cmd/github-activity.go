@@ -78,7 +78,7 @@ type Payload struct {
 type Action string
 
 const (
-	ACT_ADDED                  string = "addded"
+	ACT_ADDED                  Action = "addded"
 	ACT_ASSIGNED               Action = "assigned"
 	ACT_CLOSED                 Action = "closed"
 	ACT_CREATED                Action = "created"
