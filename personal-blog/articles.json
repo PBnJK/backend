@@ -1,0 +1,11 @@
+{
+  "articles": [
+    {
+      "id": 1,
+      "title": "Hello, world!",
+      "datePublished": "2026-09-05T17:42:28Z",
+      "dateModified": "2026-09-05T17:42:28Z",
+      "content": "Oi!"
+    }
+  ]
+}

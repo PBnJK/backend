@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title></title>
+    <link href="public/css/home.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul></ul>
+      </nav>
+    </header>
+    <article>
+      <header>
+        <h1>{{ .Title }}</h1>
+        <p class="subtitle">
+          Published:
+          <time datetime="{{ .DatePublished }}">
+            {{ humanizeDate .DatePublished }}
+          </time>
+          {{ if (ne .DatePublished .DateModified) }} (edited :
+          <time datetime="{{ .DateModified }}">
+            {{ humanizeDate .DateModified }}
+          </time>
+          ) {{ end }}
+        </p>
+      </header>
+      <main>{{ .Content }}</main>
+    </article>
+  </body>
+</html>

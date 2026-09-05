@@ -1,7 +1,7 @@
-# Unit Converter
+# Personal Blog
 
-Unit converter webpage for the
-[roadmap.sh unit converter](https://roadmap.sh/projects/unit-converter)
+Personal blog webpage for the
+[roadmap.sh personal blog](https://roadmap.sh/projects/personal-blog)
 project.
 
 ## Running
@@ -10,7 +10,7 @@ project.
 
 ```bash
 git clone https://github.com/pbnjk/backend.git
-cd backend/unit-converter
+cd backend/personal-blog
 ```
 
 ### 2.1. Build & Run
@@ -19,7 +19,7 @@ cd backend/unit-converter
 go build
 
 # Starts a server on http://127.0.0.1:8080/ (open your browser!)
-./unit-converter
+./personal-blog
 ```
 
 ### 2.2. Just Run
