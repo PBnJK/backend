@@ -8,4 +8,5 @@ Projects completed thus far:
 1. [task-cli](https://roadmap.sh/projects/task-tracker);
 2. [github-activity](https://roadmap.sh/projects/github-user-activity);
 3. [expense-tracker](https://roadmap.sh/projects/expense-tracker);
-4. [number-game](https://roadmap.sh/projects/number-guessing-game).
+4. [number-game](https://roadmap.sh/projects/number-guessing-game);
+5. [unit-converter](https://roadmap.sh/projects/unit-converter)
