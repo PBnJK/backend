@@ -1,0 +1,21 @@
+#wrapper {
+  width: 600px;
+}
+
+li {
+  list-style-type: none;
+}
+
+article {
+  display: grid;
+  grid-template-columns: 4fr 1fr 1fr;
+}
+
+article h3 {
+  margin: 0;
+}
+
+article h3::after {
+  content: "#" attr(data-id);
+  color: grey;
+}

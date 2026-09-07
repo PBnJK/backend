@@ -35,13 +35,19 @@ func (s *Server) Serve() {
 
 func (s *Server) setup() {
 	s.mux.HandleFunc("/", handler.HandleHome)
+
 	s.mux.HandleFunc("GET /article/{id}", handler.HandleArticle)
-	s.mux.HandleFunc("GET /admin", s.wrapAuth(handler.HandleAdmin))
+
+	s.mux.HandleFunc("/admin", s.wrapAuth(handler.HandleAdmin))
+	s.mux.HandleFunc("/admin/new", s.wrapAuth(handler.HandleAdminNew))
+	s.mux.HandleFunc("GET /admin/edit/{id}", s.wrapAuth(handler.HandleAdminEdit))
+	s.mux.HandleFunc("GET /admin/delete/{id}", s.wrapAuth(handler.HandleAdminDelete))
 
 	fs := http.FileServer(http.Dir("public/"))
 	s.mux.Handle("/static/", http.StripPrefix("/static/", fs))
 }
 
+// Wraps the handler in authentication
 func (s *Server) wrapAuth(f http.HandlerFunc) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		username, password, ok := r.BasicAuth()

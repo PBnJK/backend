@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title></title>
+    <title>Article - {{ .Title }}</title>
     <link href="/static/css/article.css" rel="stylesheet" />
   </head>
   <body>
@@ -21,7 +21,7 @@
       <article>
         <header>
           <h1>{{ .Title }}</h1>
-          <p class="subtitle">
+          <p id="subtitle">
             Published:
             <time datetime="{{ .DatePublished }}">
               {{ humanizeDate .DatePublished }}

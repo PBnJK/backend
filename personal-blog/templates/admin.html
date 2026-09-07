@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Admin Dashboard</title>
+    <link href="/static/css/admin.css" rel="stylesheet" />
+    <script src="/static/js/admin.js"></script>
+  </head>
+  <body>
+    <div id="wrapper">
+      <h1>Admin Dashboard</h1>
+      <ul>
+        {{ range .Articles }}
+        <li>
+          <article>
+            <h3 data-id="{{ .ID }}">{{ .Title }}</h3>
+            <a class="edit" href="/admin/edit/{{ .ID }}">Edit</a>
+            <a class="delete" href="/admin/delete/{{ .ID }}">Delete</a>
+          </article>
+        </li>
+        {{ else }}
+        <li>No articles yet...</li>
+        {{ end }}
+        <li>
+          <a class="new" href="/admin/new">+ Add</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

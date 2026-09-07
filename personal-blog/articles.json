@@ -1,11 +1,1 @@
-{
-  "articles": [
-    {
-      "id": 1,
-      "title": "Hello, world!",
-      "datePublished": "2026-09-05T17:42:28Z",
-      "dateModified": "2026-09-05T17:42:28Z",
-      "content": "Oi!"
-    }
-  ]
-}
+{"articles":[{"id":1,"title":"Test #1","datePublished":"2026-09-07T14:06:35Z","dateModified":"2026-09-07T14:06:35Z","content":"Content #1"},{"id":2,"title":"Test #2","datePublished":"2026-09-07T14:09:46Z","dateModified":"2026-09-07T14:09:46Z","content":"Content #2"}]}
